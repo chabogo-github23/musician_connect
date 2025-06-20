@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to Your Account</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login to Your Account</h1>
+        
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" class="placeholder-text">
+                {% if form.email.errors %}
+                    <div class="error-message">{{ form.email.errors }}</div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" class="placeholder-text">
+                {% if form.password.errors %}
+                    <div class="error-message">{{ form.password.errors }}</div>
+                {% endif %}
+            </div>
+            
+            <div class="forgot-password">
+                <a href="{% url 'password_reset' %}">Forgot your password?</a>
+            </div>
+            
+            <button type="submit" class="signin-button">Sign In</button>
+            
+            <div class="register-link">
+                Don't have an account? <a href="{% url 'register' %}">Register here</a>
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>
+
+<script>
+  document.getElementById('forgot-password-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('password-reset-modal').style.display = 'block';
+  });
+  
+  document.querySelector('.close-modal').addEventListener('click', function() {
+    document.getElementById('password-reset-modal').style.display = 'none';
+  });
+  
+  window.addEventListener('click', function(e) {
+    if (e.target == document.getElementById('password-reset-modal')) {
+      document.getElementById('password-reset-modal').style.display = 'none';
+    }
+  });
+</script>

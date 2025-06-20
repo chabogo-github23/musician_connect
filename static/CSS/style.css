@@ -1,0 +1,97 @@
+.text-orange {
+    color: #ff6600;
+  }
+  
+  .btn-outline-orange {
+    display: inline-block;
+    font-weight: 500;
+    text-decoration: none;
+    color: #ff6600;
+    border: 2px solid #ff6600;
+    border-radius: .25rem;
+    transition: background .2s, color .2s;
+  }
+  .btn-outline-orange:hover {
+    background: #ff6600;
+    color: #fff;
+    text-decoration: none;
+  }
+  /* Light mode (default) */
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+/* Navbar dark mode */
+body.dark-mode .navbar {
+  background-color: #343a40;
+}
+
+body.dark-mode .nav-link,
+body.dark-mode .navbar-brand,
+body.dark-mode .btn-outline-dark {
+  color: #f8f9fa !important;
+}
+
+/* Button in dark mode */
+body.dark-mode .btn-outline-dark {
+  border-color: #f8f9fa;
+}
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.registration-form {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-check {
+  margin: 1.5rem 0;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+
+  

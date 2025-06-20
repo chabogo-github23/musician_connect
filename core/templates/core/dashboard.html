@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <!-- Header with User Dropdown -->
+    <div class="header">
+        <div class="logo">MyApp</div>
+        <div class="user-menu">
+            <button class="user-btn" id="userMenuBtn">
+                <div class="avatar">{{ request.user.email|first|upper }}</div>
+                {{ request.user.email }}
+                <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="dropdown-content" id="userDropdown">
+                <a href="#" class="dropdown-item">
+                    <i class="icon">👤</i> Profile Settings
+                </a>
+                <form action="{% url 'logout' %}" method="post" class="logout-form">
+                    {% csrf_token %}
+                    <button type="submit" class="dropdown-item logout-item">
+                        <i class="icon">🚪</i> Logout
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <div class="dashboard-container">
+        <div class="welcome-card">
+            <div class="welcome-message">
+                <h1>Welcome back, {{ request.user.email }}!</h1>
+                <p>You successfully logged in at {{ request.user.last_login|date:"F j, Y H:i" }}.</p>
+                <p>This is your personal dashboard where you can manage your account and activities.</p>
+            </div>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Account Information</h3>
+                <p><strong>Email:</strong> {{ request.user.email }}</p>
+                <p><strong>Member Since:</strong> {{ request.user.date_joined|date:"F j, Y" }}</p>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Quick Actions</h3>
+                <p><a href="{% url 'complete_profile' %}" class="action-link">✏️ Update Profile</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle dropdown menu
+        const userMenuBtn = document.getElementById('userMenuBtn');
+        const userDropdown = document.getElementById('userDropdown');
+        
+        userMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            userDropdown.style.display = userDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            userDropdown.style.display = 'none';
+        });
+
+        // Prevent dropdown from closing when clicking inside
+        userDropdown.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+</html>

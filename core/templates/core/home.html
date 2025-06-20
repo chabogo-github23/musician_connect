@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Identify and Connect with Musicians Here</h1>
+        <p>We also allow event organizers to identify and connect with musicians as well as instrument rental</p>
+        <a href="{% url 'register' %}" class="btn">Get Started</a>
+    </div>
+</section>
+
+<section class="features container">
+    <div class="feature-card">
+        <i class="fas fa-guitar fa-3x"></i>
+        <h3>Find Musicians</h3>
+        <p>Connect with talented musicians in your area</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-calendar-alt fa-3x"></i>
+        <h3>Event Management</h3>
+        <p>Organize your musical events seamlessly</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-music fa-3x"></i>
+        <h3>Instrument Rental</h3>
+        <p>Rent high-quality instruments for your needs</p>
+    </div>
+</section>
+{% endblock %}
