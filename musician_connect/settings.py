@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jy&2j41ggs=-f$v7yv7#x1s5rcgq&+o0hrnn0(oop1wy5ahbx7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app, localhost']
+ALLOWED_HOSTS = ['.vercel.app, localhost, apend.sh']
 
 
 # Application definition
@@ -95,11 +95,11 @@ WSGI_APPLICATION = 'musician_connect.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'musician-connect',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'bakari99',
-        'PORT': '5432',
-        'HOST': 'localhost'
+        'PASSWORD': 'zwtAoZdaSdtovrFLzwazSWYPvcypJIxU',
+        'PORT': '18704',
+        'HOST': 'nozomi.proxy.rlwy.net'
     }
 }
 
@@ -144,6 +144,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+STATIC_ROOT = os.path.join('staticfiles', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
