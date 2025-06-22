@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'musician_connect.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'musician-connect',
         'USER': 'postgres',
         'PASSWORD': 'bakari99',
