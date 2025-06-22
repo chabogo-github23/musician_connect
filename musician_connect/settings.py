@@ -26,7 +26,14 @@ SECRET_KEY = 'django-insecure-jy&2j41ggs=-f$v7yv7#x1s5rcgq&+o0hrnn0(oop1wy5ahbx7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app, localhost, apend.sh']
+#ALLOWED_HOSTS = ['.vercel.app, localhost, apend.sh']
+
+ALLOWED_HOSTS = [
+    '.vercel.app',
+    'musician-connect-hub2cooey-caleb-bakaris-projects.vercel.app',
+    'localhost',
+    'apend.sh'
+]
 
 
 # Application definition
